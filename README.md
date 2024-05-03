@@ -25,4 +25,22 @@ THEN I am presented with a link to the developer's portfolio.
 
 //Create HTML Landing page
 //Landing page contains form with labels and inputs for username, blog title, and blog content.
-//
+//The form gets submitted and the data stored to localStorage
+//Automatically redirects to posts page upon submit
+//Errors come up if username, title, or content = ''
+//Message populates that tells you to complete the form
+
+
+
+//Posts page:
+//Header, light/dark mode toggle, and "back" button
+//Light/dark mode toggle changes the page content's styles to reflect the selection
+Clicking back button redirects to main landing page to input more blog entries
+Viewing main content, list of blog posts that are pulled from local storage
+view local storage: present with a JSON array of blog post objects, (console.log?)
+What does taking a closer look at a single blog entry look like? 
+--Seeing the title, content, and author of the post
+Link to developer's portfolio in footer
+
+
+1. create HTMl
