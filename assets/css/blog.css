@@ -1,0 +1,30 @@
+:root {
+    --light-background: rgb(245, 242, 242);
+}
+
+body {
+    font-size: 16px;
+    background-color: var(--light-background);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    border-bottom: 3px solid black;
+}
+
+h1 {
+    
+    text-align: left;
+    padding: 5vh;
+    font-size: 160%;
+}
+
+button {
+    margin-right: 20px;
+    height: 10vh;
+    width: 10vw;
+}
