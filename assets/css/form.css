@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+form ul {
+    
+}
+
+form li {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    min-height: 20vh;
+}
+
+button {
+    padding: 5px;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+   
+}
