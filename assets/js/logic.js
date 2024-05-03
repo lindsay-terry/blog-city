@@ -3,6 +3,8 @@ const titleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content');
 const submitButton = document.querySelector('#submit-button');
 
+
+//Stores blog post object to local storage as a string and sends user to blog page
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -13,6 +15,6 @@ submitButton.addEventListener('click', function (event) {
     }
 
     localStorage.setItem(('blog-post'), JSON.stringify(blogPost));
-
+    window.location.href = './blog.html';
     
 })
