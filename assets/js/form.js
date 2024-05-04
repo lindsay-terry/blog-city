@@ -29,7 +29,7 @@ submitButton.addEventListener('click', function (event) {
         content: contentInput.value
     }
 
-    localStorage.setItem(('blog-post'), JSON.stringify(blogPost));
+    storeBlogPost(blogPost);
     window.location.href = './blog.html';
         
     }
