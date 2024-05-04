@@ -10,19 +10,19 @@ body {
 
 header {
     text-align: center;
-    height: 15vh;
+    height: 80px;
     border-bottom: 3px solid black;
 }
 
 h1 {
-    padding: 5vh;
+    padding: 20px;
     font-size: 170%;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    
     
 }
 
@@ -62,7 +62,7 @@ footer p {
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 80vh;
+        height: 100%;
         }
     
     figure {
