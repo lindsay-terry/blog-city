@@ -26,17 +26,44 @@ themeSwitch.addEventListener('click', function () {
 
 //render blog posts from local storage on screen
 function renderBlogPosts() {
-    getBlogPost();
-    for (let i =0; i < newPostArray.length; i++) {
-        const post = newPostArray[i];
+    getBlogPosts();
+    
+    for (let i =0; i < totalPosts.length; i++) {
+        const post = totalPosts[i];
 
-        const p = document.createElement('p');
-        p.setAttribute('style', 'color: black, font-size:20px;')
-        p.textContent = post;
-        main.appendChild(p);
+        
 
-    }
+        const postBody = document.createElement('div');
+
+        main.appendChild(postBody);
+
+        const postTitle = document.createElement('h2');
+
+        postBody.appendChild(postTitle);
+
+        const postAuthor = document.createElement('h3');
+
+        postBody.appendChild(postAuthor);
+
+        const postContent = document.createElement('p');
+
+        postBody.appendChild(postContent);
+
+        postTitle.textContent = `Title: ${post.title}`;
+        postAuthor.textContent = `Author: ${post.username}`;
+        postContent.textContent = post.content;
+
+
+
+        // const usernameLi = document.createElement('p');
+        // p.setAttribute('style', 'color: black, font-size:20px;')
+        // p.textContent = post.username;
+        // main.appendChild(p);
+
+    };
 
 }
+
 renderBlogPosts();
+
 

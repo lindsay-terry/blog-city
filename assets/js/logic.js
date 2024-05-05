@@ -1,9 +1,15 @@
-const newPostArray = [];
+let totalPosts = JSON.parse(localStorage.getItem('totalPosts')) || [];
+
 function storeBlogPost(blogPost) {
-    localStorage.setItem('blogPost', JSON.stringify(blogPost));
+    totalPosts.push(blogPost);
+    localStorage.setItem('totalPosts', JSON.stringify(totalPosts));
+  
 }
 
-function getBlogPost() {
-    let newPost = JSON.parse(localStorage.getItem('blogPost'));
-    newPostArray.push(newPost);
+function getBlogPosts() {
+    return JSON.parse(localStorage.getItem('totalPosts')) || [];
+
 }
+
+
+
