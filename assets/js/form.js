@@ -11,9 +11,14 @@ function displayMessage(type, message) {
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const username = document.querySelector('#username').value;
-    const title = document.querySelector('#title').value;
-    const content = document.querySelector('#content').value;
+    const blogPost = {
+        username: usernameInput.value,
+        title: titleInput.value,
+        content: contentInput.value,
+    }
+    // const username = usernameInput.value;
+    // const title = titleInput.value;
+    // const content = contentInput.value;
 
     if (username === '') {
         displayMessage('error', 'Enter your username.');
@@ -23,11 +28,6 @@ submitButton.addEventListener('click', function (event) {
         displayMessage('error', 'You need to write something!');
     } else { 
         
-      const blogPost = {
-        username: usernameInput.value,
-        title: titleInput.value,
-        content: contentInput.value
-    }
 
     storeBlogPost(blogPost);
     window.location.href = './blog.html';
