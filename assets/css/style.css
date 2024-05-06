@@ -7,7 +7,6 @@
 
 body {
     font-size: 16px;
-    background-color: var(--light-background);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -17,17 +16,14 @@ header {
     align-items: center;
     height: 80px;
     border-bottom: 3px solid;
-    /* text-align: center;
-    height: 80px;
-    border-bottom: 3px solid black; */
 }
-/* testing */
+
 .header-options {
     display: flex;
     justify-content: space-between;
     width: 90%;
 }
-/* testing above */
+
 h1 {
     padding: 20px;
     font-size: 170%;
@@ -76,6 +72,10 @@ p a {
     font-weight: bold;
 }
 
+p a:visited {
+    text-decoration: none;
+}
+
 /* Styling for light and dark modes */
 .light {
     background-color: var(--light-background);
@@ -94,8 +94,6 @@ p a {
 .dark-link {
     color: var(--text-darkmode);
 }
-
-
 
 /* Styling for light/dark mode slider */
 .toggle {
@@ -155,10 +153,6 @@ input:checked + .slider:before{
     position: absolute;
     margin-top: 25px;
 }
-
-
-
-
 
 @media screen and (min-width: 768px) {
     main {
