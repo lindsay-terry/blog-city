@@ -1,5 +1,8 @@
 :root {
     --light-background: rgb(245, 242, 242);
+    --dark-background: rgb(5, 5, 45);
+    --text-lightmode: rgb(56, 56, 56); 
+    --text-darkmode: rgb(246, 240, 240);
 }
 
 body {
@@ -9,11 +12,22 @@ body {
 }
 
 header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 80px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid;
+    /* text-align: center;
+    height: 80px;
+    border-bottom: 3px solid black; */
 }
-
+/* testing */
+.header-options {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+/* testing above */
 h1 {
     padding: 20px;
     font-size: 170%;
@@ -21,9 +35,7 @@ h1 {
 
 main {
     display: flex;
-    flex-direction: column;
-    
-    
+    flex-direction: column; 
 }
 
 figure {
@@ -40,22 +52,113 @@ figure img {
     width: 80%;  
 }
 
+/* footer styling */
 footer {
+    display: flex;
+    justify-content: space-evenly;
     height: 30px;
-    text-align: center;
     padding: 10px;
-    border-top: 3px solid black;
+    border-top: 3px solid;
 }
 
 h3 {
     font-size: 110%;
-    margin: 20px;
 }
 
+h3,
 footer p {
-    margin: 10px;
-    padding-bottom: 5px;
+    margin: 15px;
+    padding-bottom: 15px;
 }
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Styling for light and dark modes */
+.light {
+    background-color: var(--light-background);
+    color: var(--text-lightmode);
+}
+
+.dark {
+    background-color: var(--dark-background);
+    color: var(--text-darkmode);
+}
+
+.light-link {
+    color: var(--text-lightmode);
+}
+
+.dark-link {
+    color: var(--text-darkmode);
+}
+
+
+
+/* Styling for light/dark mode slider */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+}
+
+/* Hiding default checkbox */
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* styling for the slider feature */
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: darkblue;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 17px;
+    width: 17px;
+    left: 2px;
+    bottom: 1.5px;
+    background-color: white;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background-color: lightblue;
+}
+
+input:checked + .slider:before{
+    transform: translateX(10px);
+    background-color: darkblue;
+}
+
+.slider.rounded {
+    border-radius: 30px;
+}
+
+.slider.rounded:before {
+    border-radius: 50px;
+}
+
+.theme-text {
+    position: absolute;
+    margin-top: 25px;
+}
+
+
+
+
 
 @media screen and (min-width: 768px) {
     main {
@@ -73,9 +176,7 @@ footer p {
     
     figure img {
         width: 100%;
-    }
-
-    
+    }   
 }
 
 @media screen and (min-width: 992px) {

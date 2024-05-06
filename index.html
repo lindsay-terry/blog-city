@@ -9,9 +9,16 @@
     <title>Blog City</title>
 </head>
 
-<body>
+<body class="light">
     <header>
-        <h1>Welcome to Blog City, Citizen</h1>
+        <div class="header-options">
+            <h1>Welcome to Blog City, Citizen</h1>
+            <label class="toggle">
+                <span class="theme-text">Dark Mode</span>
+                <input class="switch-theme" type="checkbox">
+                <span class="slider rounded"></span>
+            </label>
+        </div>
     </header>
     <main>
         <figure>
@@ -39,7 +46,12 @@
     </main>
     <footer>
         <h3>Made by Lindsay Terry</h3>
-        <p>Click here to see more of my work.</p>
+        <p>
+            <a class ="light-link" href ="https://lindsay-terry.github.io/lindsay-terry-portfolio/">Portfolio</a>
+        </p>
+        <p>
+            <a class="light-link" href="https://github.com/lindsay-terry">Github</a>
+        </p>
     </footer>
 
 <script src="./assets/js/logic.js"></script>

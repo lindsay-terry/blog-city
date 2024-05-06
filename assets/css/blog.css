@@ -63,7 +63,37 @@ button {
     font-style: italic;
 }
 
+/* footer styling */
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    height: 30px;
+    padding: 10px;
+    border-top: 3px solid black;
+}
 
+h3 {
+    font-size: 110%;
+}
+
+h3,
+footer p {
+    margin: 15px;
+    padding-bottom: 15px;
+}
+
+p a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.light-link {
+    color: var(--text-lightmode);
+}
+
+.dark-link {
+    color: var(--text-darkmode);
+}
 
 /* Styling for light and dark modes */
 .light {
@@ -105,10 +135,10 @@ button {
 .slider:before {
     position: absolute;
     content: '';
-    height: 20px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
     left: 2px;
-    bottom: 2px;
+    bottom: 1.5px;
     background-color: white;
     transition: .3s;
 }
