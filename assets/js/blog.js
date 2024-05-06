@@ -28,42 +28,33 @@ themeSwitch.addEventListener('click', function () {
 function renderBlogPosts() {
     getBlogPosts();
     
+    //iterate through the array to create styling for each post
     for (let i =0; i < totalPosts.length; i++) {
         const post = totalPosts[i];
 
-        
-
         const postBody = document.createElement('div');
-
-        main.appendChild(postBody);
-
-        const postTitle = document.createElement('h2');
-
-        postBody.appendChild(postTitle);
-
-        const postAuthor = document.createElement('h3');
-
-        postBody.appendChild(postAuthor);
-
+        const postTitle = document.createElement('p');
+        const postAuthor = document.createElement('p');
         const postContent = document.createElement('p');
 
+        main.appendChild(postBody);
+        postBody.appendChild(postTitle);
         postBody.appendChild(postContent);
+        postBody.appendChild(postAuthor);
 
-        postTitle.textContent = `Title: ${post.title}`;
-        postAuthor.textContent = `Author: ${post.username}`;
+        postBody.setAttribute('class', 'post-body');
+        postTitle.setAttribute('class', 'post-title');
+        postContent.setAttribute('class', 'post-content');
+        postAuthor.setAttribute('class', 'post-author');
+
+        postTitle.textContent = post.title;
+        postAuthor.textContent = `Posted by: ${post.username}`;
         postContent.textContent = post.content;
-
-
-
-        // const usernameLi = document.createElement('p');
-        // p.setAttribute('style', 'color: black, font-size:20px;')
-        // p.textContent = post.username;
-        // main.appendChild(p);
 
     };
 
 }
-
+//call the function to render the posts to the screen
 renderBlogPosts();
 
 

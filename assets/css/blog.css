@@ -10,13 +10,12 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid;
 }
 
 .header-options {
@@ -37,6 +36,35 @@ button {
     width: 20%;
 }
 
+/* Styling for rendered blog posts */
+.post-title {
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+.post-body {
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-content {
+    padding: 15px;
+    min-height: 80px;
+    
+}
+
+.post-author {
+    padding: 5px;
+    font-size: 80%;
+    font-style: italic;
+}
+
+
+
 /* Styling for light and dark modes */
 .light {
     background-color: var(--light-background);
@@ -49,7 +77,6 @@ button {
 }
 
 /* Styling for light/dark mode slider */
-
 .toggle {
     position: relative;
     display: inline-block;
