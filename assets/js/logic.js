@@ -2,6 +2,7 @@ const body = document.querySelector('body');
 const themeSwitch = document.querySelector('.switch-theme');
 const modeText = document.querySelector('.theme-text');
 const link = document.querySelectorAll('.light-link');
+const slider = document.querySelector('.slider');
 
 //set blog post to local storage
 let totalPosts = JSON.parse(localStorage.getItem('totalPosts')) || [];
@@ -17,10 +18,8 @@ function getBlogPosts() {
 
 //Toggle light/dark mode
 let mode = 'light';
-let darkMode = localStorage.getItem("dark-mode");
 
 function setDarkMode() {
-        mode = 'dark';
         body.setAttribute('class', 'dark');
         modeText.textContent = "Light Mode";
         for (let i = 0; i < link.length; i++) {
@@ -29,7 +28,6 @@ function setDarkMode() {
 }
 
 function setLightMode() {
-    mode = 'light';
     body.setAttribute('class', 'light');
     modeText.textContent = "Dark Mode";
     for (let i = 0; i < link.length; i++) {
@@ -39,29 +37,35 @@ function setLightMode() {
 
 themeSwitch.addEventListener('click', function() {
     if (mode === 'light') {
+        mode = 'dark';
         setDarkMode();
+        localStorage.setItem('savedMode', mode);
 
     } else {
+        mode = 'light';
         setLightMode();
+        localStorage.setItem('savedMode', mode);
     }
 })
 
-// themeSwitch.addEventListener('click', function () {
-//     if (mode === 'light') {
-//         mode = 'dark';
-//         body.setAttribute('class', 'dark');
-//         modeText.textContent = "Light Mode";
-//         for (let i = 0; i < link.length; i++) {
-//            link[i].setAttribute('class', 'dark-link'); 
-//         }
-//     } else {
-//         mode = 'light';
-//         body.setAttribute('class', 'light');
-//         modeText.textContent = "Dark Mode";
-//         for (let i = 0; i < link.length; i++) {
-//             link[i].setAttribute('class', 'light-link'); 
-//          }
-//     }
-// })
+//function to keep user preference mode across pages
+function keepMode () {
+    let savedMode = localStorage.getItem('savedMode');
+
+    if (savedMode !== null) {
+        mode = savedMode;
+    } else {
+        localStorage.setItem('savedMode', mode);
+    }
+    if (mode === 'light') {
+        setLightMode();
+    } else {
+        setDarkMode();
+    }
+
+}
+
+keepMode();
+
 
 
