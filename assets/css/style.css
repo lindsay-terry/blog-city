@@ -1,8 +1,10 @@
 :root {
     --light-background: rgb(245, 242, 242);
-    --dark-background: rgb(5, 5, 45);
+    --dark-background: rgb(35, 3, 3);
     --text-lightmode: rgb(56, 56, 56); 
     --text-darkmode: rgb(246, 240, 240);
+    --slider-background: black;
+    --slider-ball: white;
 }
 
 body {
@@ -46,6 +48,7 @@ figure {
 
 figure img {
     width: 75%;
+    border-radius: 50%;
      
 }
 
@@ -118,7 +121,7 @@ p a:visited {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: darkblue;
+    background-color: var(--slider-background);
     transition: .3s;
 }
 
@@ -129,17 +132,17 @@ p a:visited {
     width: 17px;
     left: 2px;
     bottom: 1.5px;
-    background-color: white;
+    background-color: var(--slider-ball);
     transition: .3s;
 }
 
 input:checked + .slider {
-    background-color: lightblue;
+    background-color: var(--slider-background);
 }
 
 input:checked + .slider:before{
     transform: translateX(10px);
-    background-color: darkblue;
+    background-color: var(--slider-ball);
 }
 
 .slider.rounded {
@@ -164,14 +167,16 @@ input:checked + .slider:before{
         }
     
     figure {
-        border-right: solid black 3px;
+        border-right: solid 3px;
         width: 65%;
         height: 100%;
     }
     
     figure img {
         width: 100%;
+        padding: 30px;
     }   
+    
 }
 
 @media screen and (min-width: 992px) {

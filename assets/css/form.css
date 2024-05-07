@@ -2,6 +2,7 @@ form {
     display: flex;
     flex-direction: column;
     height: 50%;
+    padding: 20px;
 }
 
 form h2 {
@@ -19,6 +20,7 @@ form li {
 
 textarea {
     min-height: 100px;
+    
 }
 
 button {
@@ -29,6 +31,7 @@ button {
 
 input {
     width: 100%;
+    
 }
 
 form p {
@@ -41,6 +44,7 @@ form p {
         height: 100%;
         justify-content: center;
         width: 50%;
+        
     }
 }
 

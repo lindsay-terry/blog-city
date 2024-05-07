@@ -1,8 +1,7 @@
 const body = document.querySelector('body');
-const themeSwitch = document.querySelector('.switch-theme');
+const themeSwitch = document.querySelector('#switch-theme');
 const modeText = document.querySelector('.theme-text');
 const link = document.querySelectorAll('.light-link');
-const slider = document.querySelector('.slider');
 
 //set blog post to local storage
 let totalPosts = JSON.parse(localStorage.getItem('totalPosts')) || [];
@@ -40,6 +39,7 @@ themeSwitch.addEventListener('click', function() {
         mode = 'dark';
         setDarkMode();
         localStorage.setItem('savedMode', mode);
+        
 
     } else {
         mode = 'light';
