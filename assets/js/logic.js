@@ -2,7 +2,8 @@ const body = document.querySelector('body');
 const themeSwitch = document.querySelector('#switch-theme');
 const modeText = document.querySelector('.theme-text');
 const link = document.querySelectorAll('.light-link');
-const sliderSwitch = document.querySelector('#slider-switch');
+// const sliderSwitch = document.querySelector('#slider-switch');
+
 
 //set blog post to local storage
 let totalPosts = JSON.parse(localStorage.getItem('totalPosts')) || [];
@@ -19,9 +20,10 @@ function getBlogPosts() {
 //Toggle light/dark mode
 let mode = 'light';
 
+
 function setDarkMode() {
-    let isChecked = localStorage.getItem('isChecked') === "true"? true:false;
-    sliderSwitch.checked = isChecked ?? false;
+    // let isChecked = localStorage.getItem('isChecked') === "true"? true:false;
+    // themeSwitch.checked = isChecked ?? true;false
         body.setAttribute('class', 'dark');
         modeText.textContent = "Light Mode";
         for (let i = 0; i < link.length; i++) {
@@ -43,7 +45,7 @@ themeSwitch.addEventListener('click', function() {
         mode = 'dark';
         setDarkMode();
         localStorage.setItem('savedMode', mode);
-        localStorage.setItem('isChecked', "false");
+        // localStorage.setItem('isChecked', "false");
 
         
 
@@ -51,7 +53,7 @@ themeSwitch.addEventListener('click', function() {
         mode = 'light';
         setLightMode();
         localStorage.setItem('savedMode', mode);
-        localStorage.setItem('isChecked', "true");
+        // localStorage.setItem('isChecked', "true");
     }
 })
 
