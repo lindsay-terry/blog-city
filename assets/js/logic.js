@@ -1,8 +1,7 @@
 const body = document.querySelector('body');
-const themeSwitch = document.querySelector('#switch-theme');
-const modeText = document.querySelector('.theme-text');
+const themeText = document.querySelector('.theme-text');
 const link = document.querySelectorAll('.light-link');
-// const sliderSwitch = document.querySelector('#slider-switch');
+const toggle = document.querySelector('.toggle input[type="checkbox"]');
 
 
 //set blog post to local storage
@@ -17,65 +16,49 @@ function getBlogPosts() {
     return JSON.parse(localStorage.getItem('totalPosts')) || [];
 }
 
-//Toggle light/dark mode
-let mode = 'light';
-
-
+//functions to assign dark/light mode attributes
 function setDarkMode() {
-    // let isChecked = localStorage.getItem('isChecked') === "true"? true:false;
-    // themeSwitch.checked = isChecked ?? true;false
-        body.setAttribute('class', 'dark');
-        modeText.textContent = "Light Mode";
-        for (let i = 0; i < link.length; i++) {
-           link[i].setAttribute('class', 'dark-link'); 
-        }
-   
+    body.setAttribute('class', 'dark');
+    themeText.textContent = "Dark Mode";
+    for (let i = 0; i < link.length; i++) {
+       link[i].setAttribute('class', 'dark-link'); 
+    }
 }
 
 function setLightMode() {
     body.setAttribute('class', 'light');
-    modeText.textContent = "Dark Mode";
+    themeText.textContent = "Light Mode";
     for (let i = 0; i < link.length; i++) {
         link[i].setAttribute('class', 'light-link'); 
-     }
+    }
 }
 
-themeSwitch.addEventListener('click', function() {
-    if (mode === 'light') {
-        mode = 'dark';
-        setDarkMode();
-        localStorage.setItem('savedMode', mode);
-        // localStorage.setItem('isChecked', "false");
-
-        
-
-    } else {
-        mode = 'light';
-        setLightMode();
-        localStorage.setItem('savedMode', mode);
-        // localStorage.setItem('isChecked', "true");
-    }
-})
-
-//function to keep user preference mode across pages
-function keepMode () {
-    let savedMode = localStorage.getItem('savedMode');
+//function to retain mode via local storage
+function keepMode() {
+    let currentTheme = localStorage.getItem('theme');
     
-
-    if (savedMode !== null) {
-        mode = savedMode;
-    } else {
-        localStorage.setItem('savedMode', mode);
+    if (currentTheme) {
+        if (currentTheme === 'light') {
+            setLightMode();
+            toggle.checked = false;
+        } else {
+            setDarkMode();
+            toggle.checked = true;
+        }
     }
-    if (mode === 'light') {
-        setLightMode();
-    } else {
-        setDarkMode();
-    }
-
 }
 
+//function to change the themes
+function changeTheme(event) {
+    if (event.target.checked) {
+        setDarkMode();
+        localStorage.setItem('theme', 'dark');
+    } else {
+        setLightMode();
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+toggle.addEventListener('change', changeTheme, false);
 keepMode();
-
-
 

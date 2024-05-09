@@ -91,11 +91,11 @@ p a:visited {
     color: var(--text-darkmode);
 }
 
-.light-link {
+.light-link { 
     color: var(--text-lightmode);
 }
 
-.dark-link {
+.dark-link { 
     color: var(--text-darkmode);
 }
 
