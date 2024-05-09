@@ -16,6 +16,7 @@ To use this application, simply navigate to the URL provided below.  At the top 
 
 In the header for the Blog Posts page, the user will notice they still have an option to switch between light and dark modes, and they will also see a "back" button.  Hitting the back button will bring them back to the home page to blog some more.  After submitting a second blog entry, the user will be sent back to the Blog Posts page, where they will see their new blog post right beneath the first.  If the user deciedes to close or refresh the page, they will notice their blog posts remain untouched, thanks to local storage!
 
+Click [here](https://lindsay-terry.github.io/blog-city/) to view deployed application.
 
 ![screenshot of landing page](./assets/images/indexhtmlscreenshot.png)
 
