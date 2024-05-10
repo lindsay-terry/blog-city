@@ -76,10 +76,6 @@ p a {
     font-weight: bold;
 }
 
-p a:visited {
-    text-decoration: none;
-}
-
 /* Styling for light and dark modes */
 .light {
     background-color: var(--light-background);
@@ -163,7 +159,6 @@ input:checked + .slider:before{
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 100%;
         }
     
     figure {
