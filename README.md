@@ -18,9 +18,9 @@ In the header for the Blog Posts page, the user will notice they still have an o
 
 Click [here](https://lindsay-terry.github.io/blog-city/) to view deployed application.
 
-![screenshot of landing page](./assets/images/indexhtmlscreenshot.png)
+![screenshot of landing page](./assets/images/indexhtml.png)
 
-![screenshot of posts page](./assets/images/bloghtmlscreenshot.png)
+![screenshot of posts page](./assets/images/bloghtml.png)
 
 ## Credits
 
